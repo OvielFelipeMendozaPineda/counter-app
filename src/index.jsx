@@ -1,12 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import Props from './Proto'
+import CounterApp from "./CounterApp";
 
 
 
 ReactDOM.createRoot( document.getElementById('root')).render(
     <React.StrictMode>
-        <Props />
+        <CounterApp value={10} />
     </React.StrictMode> 
 )
