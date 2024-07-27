@@ -1,16 +1,26 @@
 import PropTypes from 'prop-types'
 
-export default function Proto(props) {
+import React from 'react'
 
+export default function DefaultProtoTypes({ title, subtitle,value, name })  {
   return (
     <div>
-      <h1> {props.title} </h1>
-      <p>Propiedad: Description : {props.description} </p>
-      <p> Propiedad: Value: {props.value} </p>
+      <h1>{title}</h1>
+      <h3>{subtitle}</h3>
+      <p>{value}</p>
+      <p>{name}</p>
     </div>
   )
 }
-// Se definen como default props o se desestructuran al pasarlos como argumento al comoponente ({ tile, subtitle, value})
-Proto.propTypes = {
+
+// Restricciones de tipado, esto en typescript no es requeried
+DefaultProtoTypes.propTypes = {
   title: PropTypes.string.isRequired
+}
+// Valores por defecto
+DefaultProtoTypes.defaultProps = {
+  title: 'no hay titulo',
+  subtitle: 'no hay ',
+  value: 'No existe',
+  name: 'Felipe Mendoza'
 }
